@@ -1,82 +1,746 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Portfolio Website">
-    <title>Sigit Heri Wibowo - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Resume Sigit</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" &amp; ">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.min.css" />
+    <link rel="shortcut icon" href="img/Sfavicon-32x32.png" />
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<style>
+		.intro h1:before {
+			content: 'Sigit';
+		}
+		/* Style for the expandable content */
+        .expandable-content {
+			display: none;
+			margin-top: 10px;
+			padding: 20px;
+			background-color: #fff;
+			border: 2px solid #ddd;
+			border-radius: 10px; /* Rounded corners */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+			transition: transform 0.3s ease-in-out;
+        }
+
+        .section-header {
+			font-weight: bold;
+			cursor: pointer;
+			padding: 15px 20px;
+			background-color: #f1f1f1;
+			border: 2px solid #ccc;
+			border-radius: 15px; /* Rounded corners */
+			margin-top: 20px;
+			transition: background-color 0.3s ease, transform 0.3s ease;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+		.section-header:hover {
+			background-color: #e0e0e0;
+			transform: translateY(-3px); /* Slight lift effect */
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+		}
+
+		/* Style for the expandable content */
+		.expandable-content {
+			display: none;
+			margin-top: 10px;
+			padding: 20px;
+			background-color: #fff;
+			border: 2px solid #ddd;
+			border-radius: 10px; /* Rounded corners */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+			transition: transform 0.3s ease-in-out;
+		}
+
+		/* Optional: On hover, content background can change */
+		/* .expandable-content:hover {
+			transform: scale(1.02); /* Slight zoom on hover */
+			/* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); Enhanced shadow */
+		/* } */
+
+		/* When the content is expanded, you can also give it a fade-in effect */
+		.expandable-content.show {
+			display: block;
+			opacity: 0;
+			animation: fadeIn 0.5s forwards;
+		} */
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+        /* Index section styling */
+        /* .index {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .index a {
+            display: block;
+            margin-bottom: 8px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .index a:hover {
+            text-decoration: underline;
+        } */
+		/* Make the navigation bar fixed at the top */
+		.main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #797979; /* Or any color you prefer */
+            z-index: 1000; /* Ensure it's above other content */
+            padding: 5px 10px; /* Padding for some space inside the nav */
+        }
+
+        .main-nav .container {
+            width: 10%;
+            margin: 0 auto;
+            max-width: 1200px; /* Adjust according to your layout */
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar ul li {
+            padding: 5px 10px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Adjust content below the fixed navbar */
+        body {
+            padding-top: 60px; /* Space for the fixed navbar */
+        }
+
+        /* Optional: Style for active link */
+        .navbar ul li.active a {
+            font-weight: bold;
+            color: #ffcc00; /* Highlight active link */
+        }
+		.download-btn {
+			display: inline-block;
+			padding: 1px 30px;
+			background-color: #313131;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: px;
+		}
+
+		.download-btn:hover {
+			background-color: #bebcbc; /* Change color on hover */
+		}
+		.cert-image {
+			width: 300px;
+			height: auto;
+			margin-right: 8px;
+			border: 8px solid #242525; /* Blue border */
+			border-radius: 15px; /* Rounded corners */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+			transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+		}
+
+		.cert-image:hover {
+			transform: scale(1.05); /* Slight zoom on hover */
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+		}
+
+		.award-content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		.certificate {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 200px; /* Adjust as needed */
+			cursor: pointer;
+			transition: transform 0.3s ease-in-out, z-index 0s ease 0.3s;
+		}
+
+		.certificate img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.certificate h3 {
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.certificates-container {
+			display: flex;
+			justify-content: space-around;
+			gap: 20px;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.certificate.zoomed {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1000;
+			margin: auto;
+			max-width: 100%;
+			max-height: 100%;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.certificate.zoomed img {
+			transform: scale(0.75); /* Zoom in */
+			max-width: 90%;
+			max-height: 90%;
+		}
+
+		.certificate.zoomed h3 {
+			position: absolute;
+			top: 10%;
+			color: white;
+			font-size: 24px;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+		}
+
+		.certificate.zoomed:focus {
+			outline: none;
+		}
+
+	</style>
 </head>
 <body>
+	<!-- Navigation -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav">
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo"></span>
+				</div>
+			    <nav id="navbar-1" class="navbar item-nav">
+				    <ul>
+				        <li class="active"><a href="#about">About</a></li>
+						<li><a href="#about">Contact</a></li>
+				        <li><a href="#experiences">Experiences</a></li>
+				        <li><a href="#certificate">Certificate</a></li>
+				        <li><a href="#skills">Skills</a></li>
+						<li><a href="#education">Education</a></li>
+						<li><a href="#project">Portfolio</a></li>
+				    </ul>
+				</nav>
+			</header>
+		</div>
+	</div>
 
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+	<!-- Introduction -->
+	<div class="intro section" id="about">
+		<div class="container">
+			<p>Hi, I’m Sigit Heri Wibowo</p>
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="img/sgtprofile.png" alt="Avatar">
+				</div>
+				<div class="unit-80">
+					<!-- <h1>I live in<br><span id="typed"> Yogyakarta </span></h1> -->
+					<h1><span id="typed"></span></h1>
+				</div>
+				<p>
+					Experienced in Quality Assurance with 8 years in manual testing and 3 years in automation, ISTQB certified. Skilled in automation frameworks, defect documentation, and test planning. Passionate about technology, with strong analytical abilities, attention to detail, and the ability to quickly adapt to new technologies. My goal is to continue developing as a QA professional and become a more proficient software tester, both manually and through automation.<br><br>
+					<a href="https://drive.google.com/file/d/1tbQDIRNyMeYjzn3wK7a3uftqCIn7mggn/view" target="_blank" download="resumeSigit.pdf" class="download-btn">
+						Get My Resume
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="container">
-            <h1>Hello, I'm Your Name!</h1>
-            <p>Welcome to my portfolio. I'm a Quality Assurance both manual and Automation passionate about building interactive and dynamic websites. Here you can find some of my skills and projects!</p>
-        </div>
-    </section>
+	<!-- Contact -->
+	<div class="work section second" id="contact">
+		<div class="container">
+			<h2>Contact</h2>
+			<ul>
+				<a href="https://wa.me/6285729356609" target="_blank"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i>+6285729356609</a><br>
+				<a href="https://mail.google.com/mail/?view=cm&fs=1&to=sigitheriwibowo24@gmail.com" target="_blank"><i class="fas fa-envelope" style="margin-right: 8px;"></i>sigitheriwibowo24@gmail.com</a><br>
+				<a href="https://id.linkedin.com/in/sigit-heri-wibowo-4104b41b5" target="_blank"><i class="fab fa-linkedin" style="margin-right: 8px;"></i>Sigit Heri Wibowo</a><br>
+				<a href="https://www.facebook.com/sigid.heriwibowo/" target="_blank"><i class="fab fa-facebook" style="margin-right: 8px;"></i>sigid.heriwibowo</a><br>
+				<a href="https://www.instagram.com/sigitheriwibowo" target="_blank"><i class="fab fa-instagram" style="margin-right: 8px;"></i>sigitheriwibowo</a><br>
+				<a href="https://maps.app.goo.gl/s38dYjSh1sLBx5wi8" target="_blank"><i class="fa-solid fa-map-pin" style="margin-right: 8px;"></i>Yogyakarta</a><br>
+				<a href="https://github.com/Sidigidit" target="_blank"><i class="fab fa-github" style="margin-right: 8px;"></i>GitHub</a>
+			</ul>
+			 
+		</div>
+	</div>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Node.js</li>
-                <li>Version control (Git, GitHub)</li>
-                <li>Responsive Web Design</li>
-            </ul>
-        </div>
-    </section>
+	<!-- Work Experience -->
+	<div class="work section second" id="experiences">
+		<div class="container">
+			<h1>Work<br>Experiences</h1>
+			<!-- <div class="section-header" onclick="toggleContent('experiences-content')">Click to View Experiences</div> -->
+            <!-- <div id="experiences-content" class="expandable-content"> -->
+				<ul class="work-list">
+					<li>July 2022 - December 2024</li>
+					<li>
+						<a href="#">
+							<img src="img/logo-ab.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							PT Accelbyte Teknologi Indonesia
+						</a>
+					</li>
+					<li>Software Development Engineer in Test (SDET)
+						<ul>
+							<li>- Develop and maintain K6 automation test.</li>
+							<li>- Deploy K6 automation test docker image to Kubernetes cluster through GitLab CI/CD pipeline.</li>
+							<li>- Monitor and debug failed K6 Automation tests through Grafana.</li>
+							<li>- Maintain Unity and Unreal SDK tests through Jenkins Pipeline.</li>
+							<li>- Develop and maintain a front-end automation test using Cypress.</li>
+							<li>- Maintain the Cleanup tool to clean up test data using shell script.</li>
+							<li>- Develop and maintain back-end automation test using K6.</li>
+							<li>- Maintain GitLab CI/CD to run all developed automation test.</li>
+							<li>- Root cause analysis of bugs found by automation tests.</li>
+							<li>- Integrate automation test with AWS S3 to store automation report.</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="work-list">
+					<li>January 2021 - August 2022</li>
+					<li>
+						<a href="#">
+							<img src="img/logo-ab.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							PT Accelbyte Teknologi Indonesia
+						</a>
+					</li>
+					<li>Software Quality Assurance
+						<ul>
+							<li>- Perform biweekly regression tests on internal products to make sure no breaking changes in the product.</li>
+							<li>- Perform a sanity test on each client when getting an update to make sure no features are broken due to the update.</li>
+							<li>- Regularly create test scenario.</li>
+							<li>- Root cause analysis of bugs found during testing process.</li>
+							<li>- Collaborate in test planning during sprint grooming to align testing requirements and scenarios with sprint goals before planning begins.</li>
+							<li>- Report all bugs found and follow up to make sure all bugs are completely fixed.</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="work-list">
+					<li>January 2015 - December 2020</li>
+					<li>
+						<a href="#">
+							<img src="img/logo-gameloft.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							PT Gameloft Indonesia
+						</a>
+					</li>
+					<li>Quality Assurance
+						<ul>
+							<li>- Perform testing as user experience or based on a checklist to find bugs and report it.</li>
+							<li>- Report all bugs found and follow up to make sure all bugs are completely fixed.</li>
+							<li>- Perform CRM test, Ads test, and compatibility test.</li>
+							<li>- Cover lead’s tasks including deploy QA allocation, mentoring junior QA.</li>
+							<li>- Help the supervisor to create a development plan for the team based on their SWOT (Strengths, Weaknesses, Opportunities, Threats), and mini development project for the team (Internal Development Plan).</li>
+							<li>- Assist the team leader in giving task and making the report for the Producers.</li>
+							<li>- Perform mobile testing to find bugs and report them.</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="work-list">
+					<li>November 2010 - March 2014</li>
+					<li>
+						<a href="#">
+							<img src="img/pngwing.com.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							PT Sari Melati Kencana - Pizza Hut
+						</a>
+					</li>
+					<li>Back of House
+						<ul>
+							<li>- Prepare and mix salad, bake the pizza, and cook pasta.</li>
+							<li>- Make sure all products presented met the standardization </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		<!-- </div> -->
+	</div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="project">
-                <h3>Project 1: Personal Blog</h3>
-                <p>This project is a personal blog built using React and Node.js. It includes features like user authentication and dynamic content management.</p>
-                <a href="https://github.com/your-username/project-1" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Project 2: Portfolio Website</h3>
-                <p>This portfolio showcases my web development skills and includes interactive sections like this one!</p>
-                <a href="https://github.com/your-username/my-portfolio" target="_blank">View on GitHub</a>
-            </div>
-        </div>
-    </section>
+	<!-- Award & Achievements -->
+	<div class="award section second" id="certificate">
+		<div class="container">
+			<h1>Certificate</h1>
+			<div class="section-header" onclick="toggleContent('certificate-content')">Click to View Certificate</div>
+			<div id="certificate-content" class="expandable-content">
+				<div class="certificates-container">
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/Certificate-22-CTFL-02105-USA_page-0001.jpg" alt="Certificate" class="cert-image"/>
+						<h3>1. ASTQB - ISTQB</h3>
+					</div>
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/Katalon Sertifikat.jpg" alt="Certificate" class="cert-image"/>
+						<h3>2. Udemy - Katalon</h3>
+					</div>
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/UC-222893b0-52cb-4f30-89de-a0fba37a1beb.jpg" alt="Certificate" class="cert-image"/>
+						<h3>3. Udemy - MasterClass Software Testing with Jira & Agile</h3>
+					</div>
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/UC-153bb4e8-c301-4370-b410-c7562f3600d6.jpg" alt="Certificate" class="cert-image"/>
+						<h3>4. Udemy - Agile Fundamentals</h3>
+					</div>
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/UC-6b7808e5-dac2-41fa-a634-478136fb68aa.jpg" alt="Certificate" class="cert-image"/>
+						<h3>5. Udemy - Python</h3>
+					</div>
+					<div class="certificate" onclick="toggleZoom(this)">
+						<img src="img/UC-2cac7280-6991-43d2-bb78-584a67ca3c5c.jpg" alt="Certificate" class="cert-image"/>
+						<h3>6. Udemy - Docker Containerize</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch, feel free to reach out via email or through my social media links below.</p>
-            <ul>
-                <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-                <li>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/your-name/" target="_blank">linkedin.com/in/your-name</a></li>
-            </ul>
-        </div>
-    </section>
+	<!-- Technical Skills -->
+	<div class="skills section second" id="skills">
+		<div class="container">
+			<h1>Skills</h1>
+			<div class="section-header" onclick="toggleContent('skill-content')">Click to View Technical Skills</div>
+            <div id="skill-content" class="expandable-content">
+				<ul class="skill-list list-flat">
+					<li>- Manual Test (Web and Mobile)</li>
+					<li>- Manage Test Scenario</li>
+					<li>- Manage Test Plan</li>
+					<li>- Automation Test</li>
+					<li>- Manage Test Scenario</li>
+					<li>- Tools & Technologies :
+						<ul>
+							<li>- Postman</li>
+							<li>- Selenium</li>
+							<li>- Cypress</li>
+							<li>- Katalon</li>
+							<li>- K6</li>
+							<li>- Playwright</li>
+						</ul>
+					</li>
+					<li>- Programming Languages :
+						<ul>
+							<li>- Shell</li>
+							<li>- Python</li>
+							<li>- Javascript</li>
+						</ul>
+					</li>
+					<li>- Tools & Technologies :
+						<ul>
+							<li>- Postman</li>
+							<li>- Selenium</li>
+							<li>- Cypress</li>
+							<li>- Katalon</li>
+							<li>- K6</li>
+							<li>- Playwright</li>
+						</ul>
+					</li>
+					<li>- Infrastructure & CI/CD :
+						<ul>
+							<li>- Docker</li>
+							<li>- Kubernetes</li>
+							<li>- gitLab CI/CD</li>
+							<li>- Jenkins</li>
+							<li>- AWS</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="section-header" onclick="toggleContent('softskill-content')">Click to View Soft Skills</div>
+			<div id="softskill-content" class="expandable-content">
+				<ul class="skill-list list-flat">
+					<li>- Analytical Thinking</li>
+					<li>- Attention To Details</li>
+					<li>- Effective Communication</li>
+					<li>- Critical Thinking</li>
+					<li>- Problem-Solving Skills</li>
+					<li>- Adaptability</li>
+					<li>- Time Management</li>
+					<li>- Teamwork</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-    </footer>
+	<div class="skills section second" id="education">
+		<div class="container">
+			<h1>Education</h1>
+			<!-- <div class="section-header" onclick="toggleContent('edu-content')">Click to View Education</div> -->
+            <!-- <div id="edu-content" class="expandable-content"> -->
+				<p>Mercubuana Yogyakarta University</p>
+				<p>Bachelor of Informatics - GPA 3.72 (2019-2023)</p>
+			<!-- </div> -->
+		</div>
+	</div>
 
-    <script src="script.js"></script>
+	<div class="skills section second" id="project">
+		<div class="container">
+			<h1>Portfolio & Project</h1>
+			<div class="section-header" onclick="toggleContent('port-content')">Click to View Portfolio and Project</div>
+            <div id="port-content" class="expandable-content">
+				<ul class="skill-list list-flat">
+					<li>1. Github Portfolio :
+						<ul>
+							<li><a href="https://github.com/Sidigidit/Demo-Cypress" target="_blank">- Cypress Demo</a></li>
+							<li><a href="https://github.com/Sidigidit/apiTestReqres" target="_blank">- APIrest Demo</a></li>
+							<li><a href="https://github.com/Sidigidit/playwright-demoqa" target="_blank">- Playwright Demo</a></li>
+							<li><a href="https://github.com/Sidigidit/DSS-BugPriority" target="_blank">- PHP Demo</a></li>
+							<li><a href="https://github.com/Sidigidit/KatalonSauceDemo" target="blank">- Katalon Demo</a></li>
+						</ul>
+					</li>
+					<li>
+						<a>2.  
+							<img src="img/logo-ab.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							Accelbyte Project :
+						</a>
+						<ul>
+							<li>
+								<a>Splitgate <img src="img/Splitgate_cover.jpg" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul><strong>Platform</strong>: PC & Console</ul>
+								<ul><strong>Role</strong>: Software Quality Assurance</ul>
+								<ul><strong>Responsibility</strong>:
+									<li>Create a test case and test scenario.</li>
+									<li>Define the test plan.</li>
+									<li>Test and give feedback to the main features (FPS matchmaking).</li>
+									<li>Set up game configuration.</li>
+									<li>Whitebox testing using Postman to hit some endpoints.</li>
+									<li>Migrate database to the new environment.</li>
+									<li>Report and follow up the bugs till fixed</li>
+								</ul>
+							</li>
+							<li>
+								<a>Front-end Automation test <img src="img/cy.jpg" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul><strong>Framework</strong>: Cypress</ul>
+								<ul><strong>Programming language</strong>: Shell, JS</ul>
+								<ul><strong>Role</strong>: Software Development Engineer in Test</ul>
+								<ul><strong>Goal</strong>: To assist the QA team in reducing repetitive manual testing efforts, thereby decreasing testing time.</ul>
+								<ul><strong>Result</strong>: Cypress FE automation successfully reduced the manual testing time from 4 hours per client to 2 hours per client..</ul>
+								<ul><strong>Responsibility</strong>:
+									<li>Maintain the Front-End (FE) Automation each Sprint to avoid false alarms due to changes in UI element names.</li>
+									<li>Enhance the performance of FE automation to ensure it is easily understandable by stakeholders, particularly the QA team.</li>
+									<li>Fix any bugs identified by the automation reports that are not caused by service issues or infrastructure issues.</li>
+									<li>Assist stakeholders, especially the QA team, when they encounter issues running FE Automation.</li>
+									<li>Documenting all aspects of the Cypress FE automation developed.</li>
+									<li>Maintaining and fixing issues related to the GitLab CI/CD pipeline to ensure smooth integration and continuous testing.</li>
+									<li>Manage the automation test using AWS EC2 and  S3 (parameter store).</li>
+								</ul>
+							</li>
+							<li>
+								<a>Game Loop Proober <img src="img/k6.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul><strong>Framework</strong>: K6</ul>
+								<ul><strong>Programming language</strong>: JS</ul>
+								<ul><strong>Role</strong>: Software Development Engineer in Test</ul>
+								<ul><strong>Goal</strong>: To assist the QA team in reducing repetitive manual testing efforts, thereby decreasing testing time.</ul>
+								<ul><strong>Result</strong>: Cypress FE automation successfully reduced the manual testing time from 4 hours per client to 2 hours per client.</ul>
+								<ul><strong>Responsibility</strong>: 
+									<li>Maintain the Front-End (FE) Automation each Sprint to avoid false alarms due to changes in UI element names.</li>
+									<li>Enhance the performance of FE automation to ensure it is easily understandable by stakeholders, particularly the QA team.</li>
+									<li>Fix any bugs identified by the automation reports that are not caused by service issues or infrastructure issues.</li>
+									<li>Assist stakeholders, especially the QA team, when they encounter issues running FE Automation.</li>
+									<li>Documenting all aspects of the Cypress FE automation developed.</li>
+									<li>Maintaining and fixing issues related to the GitLab CI/CD pipeline to ensure smooth integration and continuous testing.</li>
+									<li>Manage the automation test using AWS EC2 and  S3 (parameter store).</li>
+								</ul>
+							</li>
+							<li>
+								<a>Pipeline SDK automation test <img src="img/jenkins.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul><strong>Tools</strong>: Jenkins, Unity, Unreal</ul>
+								<ul><strong>Programming language</strong>: Python, Shell</ul>
+								<ul><strong>Role</strong>: Software Engineer in Test</ul>
+								<ul><strong>Goal</strong>: Support the SDK development team to ensure their automation runs smoothly within the pipeline.</ul>
+								<ul><strong>Result</strong>: SDK automation successfully runs within the Jenkins pipeline, generates result summaries in a spreadsheet, and tracks issues by creating Jira tickets when test cases fail.</ul>
+								<ul><strong>Responsibility</strong>: 
+									<li>Maintaining and ensuring the SDK automation tests run smoothly within the Jenkins pipeline.</li>
+									<li>Debugging and fixing any issues related to SDK automation and pipeline-related problems.</li>
+									<li>Developing pipeline reports to be sent as Slack notifications.</li>
+									<li>Automating the creation of Jira tickets through Jenkins whenever a test case fails in SDK automation.</li>
+									<li>Enhancing the Jenkins pipeline to support multiple versions of Unreal Engine machines.</li>
+									<li>Developing daily reports summarizing SDK pipeline results in a spreadsheet.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a>3.  
+							<img src="img/logo-gameloft.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"/>
+							Gameloft Project :
+						</a>
+						<ul>
+							<li>
+								<a>Gangstar Vegas 4 <img src="img/GV.jpg" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul>Platform: Android & iOS</ul>
+								<ul>Role: Senior Quality Assurance</ul>
+								<ul>responsibility: 
+									<li>Test the whole gameplay based on game design document.</li>
+									<li>Test the game following checklist testcases.</li>
+									<li>Test and give new features for the design and behavior.</li>
+									<li>Define the test plan and allocate QA source.</li>
+									<li>Compatibility testing across various Android devices.</li>
+									<li>Reporting bugs and functional issues.</li>
+									<li>Follow up the bugs till fixed</li>
+									<li>Mentoring team members</li>
+								</ul>
+							</li>
+							<li>
+								<a>Pastry Paradise <img src="img/pp.jpg" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul>Platform: Android</ul>
+								<ul>Role: Quality Assurance</ul>
+								<ul>responsibility: 
+									<li>Test new features and level updates.</li>
+									<li>Test the whole gameplay based on game design document.</li>
+									<li>Test the game following checklist testcases.</li>
+									<li>Compatibility testing across various Android devices.</li>
+									<li>Reporting bugs and functional issues.</li>
+									<li>Follow up the bugs till fixed</li>
+									<li>Setup Ads including banner, interstitial and incentive.</li>
+									<li>Test the ads behavior.</li>
+								</ul>
+							</li>
+							<li>
+								<a>Disney Magic Kingdom <img src="img/DMK.jpg" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul>Platform: Android</ul>
+								<ul>Role: Quality Assurance</ul>
+								<ul>responsibility: 
+									<li>Test the whole gameplay based on game design document.</li>
+									<li>Test the game following checklist testcases.</li>
+									<li>Compatibility testing across various Android devices.</li>
+									<li>Reporting bugs and functional issues.</li>
+									<li>Follow up the bugs till fixed</li>
+								</ul>
+							</li>
+							<li>
+								<a>Ice Age Vilage <img src="img/ice age.png" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul>Platform: Android</ul>
+								<ul>Role: Quality Assurance</ul>
+								<ul>responsibility: 
+									<li>Test the whole gameplay based on game design document.</li>
+									<li>Test the game following checklist testcases.</li>
+									<li>Compatibility testing across various Android devices.</li>
+									<li>Reporting bugs and functional issues.</li>
+									<li>Follow up the bugs till fixed</li>
+								</ul>
+							</li>
+							<li>
+								<a>Asphalt 9 Legends <img src="img/asphalt.webp" alt="Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%;"/>
+								</a>
+								<ul>Platform: Android</ul>
+								<ul>Role: Quality Assurance</ul>
+								<ul>responsibility: 
+									<li>Test the whole gameplay based on game design document.</li>
+									<li>Test the game following checklist testcases.</li>
+									<li>Compatibility testing across various Android devices.</li>
+									<li>Reporting bugs and functional issues.</li>
+									<li>Follow up the bugs till fixed</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Quote -->
+	<div class="quote">
+		<div class="container text-centered">
+			<h1>Quality Assurance is not about finding faults, it’s about creating trust</h1>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<p>Sigit Heri Wibowo</p>
+			    </div>
+			    <div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="mailto:sigitheriwibowo24@gmail.com"><i class="fa fa-send"></i></a></li>
+					</ul>
+			    </div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.min.js"></script>
+    <script src="js/kube.min.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		// Change to edit type effect
+		strings: ["SQA || SDET"],
+
+		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+
+		function toggleContent(sectionId) {
+            var content = document.getElementById(sectionId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+		function toggleZoom(certificate) {
+			// If the certificate is zoomed, remove the zoom class (zoom out)
+			if (certificate.classList.contains('zoomed')) {
+				certificate.classList.remove('zoomed');
+			} else {
+				// Remove the zoomed class from any other zoomed certificate
+				const allCertificates = document.querySelectorAll('.certificate');
+				allCertificates.forEach(cert => {
+					cert.classList.remove('zoomed');
+				});
+
+				// Add the zoom class to the clicked certificate (zoom in)
+				certificate.classList.add('zoomed');
+			}
+		}
+    </script>
 </body>
 </html>
