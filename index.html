@@ -60,18 +60,12 @@
 			transition: transform 0.3s ease-in-out;
 		}
 
-		/* Optional: On hover, content background can change */
-		/* .expandable-content:hover {
-			transform: scale(1.02); /* Slight zoom on hover */
-			/* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); Enhanced shadow */
-		/* } */
-
-		/* When the content is expanded, you can also give it a fade-in effect */
+		/* When the content is expanded, give it a fade-in effect */
 		.expandable-content.show {
 			display: block;
 			opacity: 0;
 			animation: fadeIn 0.5s forwards;
-		} */
+		}
 
 		@keyframes fadeIn {
 			from {
@@ -243,6 +237,203 @@
 			outline: none;
 		}
 
+		:root {
+			--ink: #203040;
+			--muted: #64748b;
+			--surface: #ffffff;
+			--surface-alt: #f3f7fb;
+			--line: #d8e3ed;
+			--teal: #087f8c;
+			--accent: #2f6fdb;
+			--accent-dark: #2256ad;
+		}
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			padding-top: 52px;
+			background: #eef4f7;
+			color: var(--ink);
+		}
+
+		.main-nav {
+			padding: 0;
+			background: var(--ink);
+			border-bottom: 4px solid var(--accent);
+			box-shadow: 0 3px 14px rgba(32, 48, 64, 0.18);
+		}
+
+		.main-nav .container {
+			width: 100%;
+			max-width: 1120px;
+			padding: 0 24px;
+		}
+
+		.navbar ul { justify-content: flex-end; gap: 4px; }
+		.navbar ul li { padding: 0; }
+		.navbar ul li a {
+			display: block;
+			padding: 13px 11px 11px;
+			color: #d9e8ee;
+			font-size: 0.78rem;
+			font-weight: 700;
+			line-height: 1;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+		}
+
+		.navbar ul li a:hover,
+		.navbar ul li.active a {
+			color: #fff !important;
+			background: var(--teal);
+		}
+
+		.container { max-width: 1120px; padding: 0 24px; }
+
+		.intro {
+			max-width: 1120px;
+			margin: 0 auto;
+			padding: 58px 24px 42px;
+			background: var(--surface);
+			border-bottom: 1px solid var(--line);
+		}
+
+		.intro > .container { max-width: none; padding: 0; }
+		.intro p:first-child {
+			color: var(--teal);
+			font-size: 0.82rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+		.intro .wrap { margin: 18px 0 0; }
+		.intro h1 span { color: var(--accent); font-size: clamp(2rem, 5vw, 3.6rem); }
+		.intro img {
+			border: 4px solid var(--accent);
+			box-shadow: 0 0 0 6px #fff, 0 7px 20px rgba(32, 48, 64, 0.16);
+		}
+
+		.section {
+			max-width: 1120px;
+			margin: 0 auto;
+			padding: 30px 24px;
+			background: var(--surface);
+			border-bottom: 1px solid var(--line);
+		}
+		.section.second { margin-bottom: 0; }
+		.section > .container { max-width: none; padding: 0; }
+		.section .container:after { display: none; }
+		.section h1,
+		.section h2 {
+			margin-bottom: 18px;
+			color: var(--ink);
+			font-size: 1.65rem;
+			line-height: 1.15;
+		}
+		.section h1:before,
+		.section h2:before {
+			display: inline-block;
+			width: 7px;
+			height: 22px;
+			margin-right: 10px;
+			background: var(--accent);
+			content: '';
+			vertical-align: -2px;
+		}
+
+		.work-list {
+			margin-bottom: 18px !important;
+			padding: 14px 18px 12px;
+			border: 1px solid var(--line);
+			border-left: 4px solid var(--teal);
+			background: var(--surface-alt);
+			border-radius: 4px;
+		}
+		.work-list li { line-height: 1.55; }
+		.work .work-list li,
+		.award-list li,
+		.skill-list li,
+		.expandable-content li {
+			color: var(--ink) !important;
+		}
+		.work-list li:first-child,
+		.award-list li:first-child,
+		.skill-list li:first-child {
+			color: var(--ink) !important;
+			font-weight: 700;
+		}
+		.work-list li a { color: var(--teal); border-bottom: 0; }
+
+		.section-header {
+			margin: 12px 0 0;
+			padding: 11px 14px;
+			border: 1px solid #b9d7dc;
+			border-left: 4px solid var(--teal);
+			border-radius: 4px;
+			background: #e9f6f7;
+			color: var(--teal);
+			font-size: 0.9rem;
+			box-shadow: none;
+		}
+		.section-header:hover { background: #d5eff1; transform: none; box-shadow: none; }
+		.expandable-content {
+			margin-top: 8px;
+			padding: 16px;
+			border: 1px solid var(--line);
+			border-radius: 4px;
+			background: var(--surface-alt);
+			box-shadow: none;
+		}
+		.expandable-content li,
+		.expandable-content p { line-height: 1.55; }
+
+		.download-btn {
+			padding: 9px 16px;
+			margin-top: 4px;
+			background: var(--accent);
+			border: 2px solid var(--accent);
+			border-radius: 4px;
+			box-shadow: 0 4px 0 var(--accent-dark);
+		}
+		.download-btn:hover { background: var(--accent-dark); color: #fff !important; }
+
+		.certificates-container { justify-content: flex-start; gap: 14px; margin-top: 14px; }
+		.certificate {
+			max-width: 160px;
+			padding: 8px;
+			border: 1px solid var(--line);
+			border-radius: 4px;
+			background: #fff;
+		}
+		.certificate img,
+		.cert-image { border: 0; border-radius: 2px; box-shadow: none; }
+		.certificate h3 { margin-top: 8px; color: var(--ink); font-size: 0.78rem; line-height: 1.35; }
+
+		.quote {
+			margin-top: 0;
+			padding: 34px 0;
+			background: linear-gradient(115deg, #087f8c, #203040);
+		}
+		.quote h1 { margin: 14px 0; padding: 22px; border: 2px solid rgba(255, 255, 255, 0.75); font-size: 1.55rem; line-height: 1.3; }
+		footer { padding: 22px 0 12px; background: var(--ink); }
+		footer p,
+		footer .social a { color: #d9e8ee; }
+
+		@media only screen and (max-width: 767px) {
+			body { padding-top: 48px; }
+			.main-nav .container { padding: 0 10px; }
+			.navbar ul { justify-content: center; flex-wrap: wrap; }
+			.navbar ul li a { padding: 10px 7px 9px; font-size: 0.68rem; }
+			.intro,
+			.section { padding-right: 16px; padding-left: 16px; }
+			.intro { padding-top: 38px; }
+			.intro .unit-20,
+			.intro .unit-80 { width: 100%; text-align: center; }
+			.intro h1 { margin-top: 18px; }
+			.work-list { padding: 12px; }
+			.certificate { max-width: calc(50% - 7px); }
+		}
+
 	</style>
 </head>
 <body>
@@ -281,7 +472,7 @@
 					<h1><span id="typed"></span></h1>
 				</div>
 				<p>
-					Experienced in Quality Assurance with 8 years in manual testing and 3 years in automation, ISTQB certified. Skilled in automation frameworks, defect documentation, and test planning. Passionate about technology, with strong analytical abilities, attention to detail, and the ability to quickly adapt to new technologies. My goal is to continue developing as a QA professional and become a more proficient software tester, both manually and through automation.<br><br>
+					Experienced in Quality Assurance with 8 years in manual testing and 3 years in automation, ISTQB certified. Skilled in automation frameworks, defect documentation, and test planning. Passionate about technology, with strong analytical abilities, attention to detail, and the ability to quickly adapt to new technologies. My goal is to continue developing as a QA professional and become a more proficient software tester, both manually, automation and and modern AI-driven environments.<br><br>
 					<a href="https://drive.google.com/file/d/1kuESa2TnnxX1IALyBXbfHAv7bnptDONz/view" target="_blank" download="resumeSigit.pdf" class="download-btn">
 						Get My Resume
 					</a>
